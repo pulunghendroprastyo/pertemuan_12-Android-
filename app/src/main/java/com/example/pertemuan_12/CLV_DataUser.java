@@ -54,10 +54,12 @@ public class CLV_DataUser extends ArrayAdapter<String> {
         if (vPhoto.get(position).equals(""))
         {
             Picasso.get().load("http://mobile.undangmi.com/image/noimage.png").into(photo);
+            //Picasso.get().load("http://tekajeapunya.com/kelompok_11/image/noimage.png").into(photo);
         }
         else
         {
             Picasso.get().load("http://mobile.undangmi.com/image/"+vPhoto.get(position)).into(photo);
+            //Picasso.get().load("http://tekajeapunya.com/kelompok_11/image/"+vPhoto.get(position)).into(photo);
         }
 
         //Load the animation from the xml file and set it to the row

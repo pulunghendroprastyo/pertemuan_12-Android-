@@ -87,7 +87,6 @@ public class add_mahasiswa extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
                 if (bitMap != null) {
 
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(add_mahasiswa.this);
@@ -114,7 +113,6 @@ public class add_mahasiswa extends AppCompatActivity {
 
 
                 } else {
-
                     TakePhoto();
                 }
             }
@@ -132,21 +130,45 @@ public class add_mahasiswa extends AppCompatActivity {
                 address = ETAddress.getText().toString();
                 hobby   = ETHobby.getText().toString();
 
-                if (bitMap == null){
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(add_mahasiswa.this);
-                    builder.setMessage("Please take a photo ");
-                    AlertDialog alert1 = builder.create();
-                    alert1.show();
-                    progressDialog.dismiss();
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(add_mahasiswa.this);
+                alertDialogBuilder.setMessage("Do yo want to submit your data ?");
+
+                alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+
+                        if (bitMap == null){
+
+                            AlertDialog.Builder builder = new AlertDialog.Builder(add_mahasiswa.this);
+                            builder.setMessage("Please take a photo ");
+                            AlertDialog alert1 = builder.create();
+                            alert1.show();
+                            progressDialog.dismiss();
 
 
-                }
-                else {
+                        }
+                        else {
 
-                    validasiData();
+                            validasiData();
 
-                }
+                        }
+                    }
+                });
+
+                alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                    }
+                });
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+
+
+
             }
         });
 

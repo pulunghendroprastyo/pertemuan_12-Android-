@@ -144,6 +144,10 @@ public class MainActivity extends AppCompatActivity {
                                         //DataActivity.class dan membawa/mengirim data-data hasil query dari server.
                                         Intent i = new Intent(MainActivity.this, edit_mahasiswa.class);
                                         i.putExtra("nim",array_nim.get(position));
+                                        i.putExtra("name",array_name.get(position));
+                                        i.putExtra("address",array_address.get(position));
+                                        i.putExtra("hobby",array_hobby.get(position));
+                                        i.putExtra("photo",array_photo.get(position));
                                         startActivity(i);
                                     }
                                 });
